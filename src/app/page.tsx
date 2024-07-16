@@ -1,25 +1,15 @@
 'use client'
-import About from "@/components/About";
 import Aside from "@/components/Aside";
-import Contact from "@/components/Contact";
-import Portfolio from "@/components/Portfolio";
-import Services from "@/components/Services";
-//import Home from "@/components/Home";
 import '../components/style.css';
 import { usePathname } from "next/navigation";
+import Home from "@/components/Home";
 
 
-export default function Home() {
-    const url = usePathname()
-    //console.log("==================",url)
+export default function page() {
   return (
-  <div className="main-container">
+  <div>
     <Aside />
-    {/* <Home /> */}
-    {/* <Portfolio/> */}
-    {/* <About/> */}
-    {/* <Services/>     */}
-    {/* <Contact/> */}
+    <Home />
   </div>  
   );
 }

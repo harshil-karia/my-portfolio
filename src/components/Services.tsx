@@ -1,9 +1,12 @@
+'use client'
+import { useAsideContext } from '@/context/AsideContext';
 import React from 'react'
 
 
 const Services = () => {
+    const { isAsideOpen } = useAsideContext();
   return (
-      <section className="service section" id="service">
+      <section className={`service section active ${isAsideOpen?'open': ''}`} id="service">
         <div className="container">
             <div className="row">
                 <div className="section-title padd-15">
