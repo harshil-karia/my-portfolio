@@ -3,11 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "@/components/style.css";
-import "@/components/skins/color-1.css";
-import "@/components/skins/color-2.css";
-import "@/components/skins/color-3.css";
-import "@/components/skins/color-4.css";
-import "@/components/skins/color-5.css";
 import "@/components/style-switcher.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Head from "next/head";
@@ -27,8 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <AsideProvider>
-    <html lang="en">
-      <body className={`${inter.className} dark`} style={{ backgroundColor: "#222222" }}>
+      <html lang="en">
         <Head>
           <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -38,17 +32,17 @@ export default function RootLayout({
           <link rel="stylesheet" href="/css/style.css" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
           {/*===== Style Switcher =====*/}
-          <link rel="stylesheet" href="/css/skins/color-1.css" className="alternate-style" title="color-1" />
-          <link rel="stylesheet" href="/css/skins/color-2.css" className="alternate-style" title="color-2" />
-          <link rel="stylesheet" href="/css/skins/color-3.css" className="alternate-style" title="color-3" />
-          <link rel="stylesheet" href="/css/skins/color-4.css" className="alternate-style" title="color-4" />
-          <link rel="stylesheet" href="/css/skins/color-5.css" className="alternate-style" title="color-5" />
+          <link id="color-1" rel="stylesheet" href="/css/skins/color-1.css" className="alternate-style" title="color-1" />
+          <link id="color-2" rel="stylesheet" href="/css/skins/color-2.css" className="alternate-style" title="color-2" />
+          <link id="color-3" rel="stylesheet" href="/css/skins/color-3.css" className="alternate-style" title="color-3" />
+          <link id="color-4" rel="stylesheet" href="/css/skins/color-4.css" className="alternate-style" title="color-4" />
+          <link id="color-5" rel="stylesheet" href="/css/skins/color-5.css" className="alternate-style" title="color-5" />
           <link rel="stylesheet" href="/css/style-switcher.css" />
         </Head>
-        
-        {children}  
-      </body>
-    </html>
+        <body className={`${inter.className} dark`} style={{ backgroundColor: "#222222" }}>
+          {children}
+        </body>
+      </html>
     </AsideProvider>
   );
 }

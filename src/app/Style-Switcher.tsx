@@ -1,11 +1,12 @@
 
 'use client';
 import React, { useEffect, useState } from 'react';
-import './skins/color-1.css';
-import './skins/color-2.css';
-import './skins/color-3.css';
-import './skins/color-4.css';
-import './skins/color-5.css';
+import './css/skins/color-1.css';
+import './css/skins/color-2.css';
+import './css/skins/color-3.css';
+import './css/skins/color-4.css';
+import './css/skins/color-5.css';
+import './style-switcher.css'
 
 const StyleSwitcher: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ const StyleSwitcher: React.FC = () => {
   const handleStyleChange = (color: string) => {
     console.log("Changing style to:", color);
     const alternateStyles = document.querySelectorAll<HTMLLinkElement>(".alternate-style");
-    console.log("Found styles:", alternateStyles.length);
+    console.log("Found styles:", alternateStyles.length); // Log the length of found styles
     alternateStyles.forEach((style) => {
       console.log("Current style:", style.getAttribute("title"));
       if (color === style.getAttribute("title")) {
@@ -23,6 +24,7 @@ const StyleSwitcher: React.FC = () => {
       }
     });
   };
+  
 
   useEffect(() => {
     const styleSwitcherToggle = document.querySelector(".style-switcher-toggler") as HTMLElement;
